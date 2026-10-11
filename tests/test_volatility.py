@@ -19,7 +19,7 @@ def dummy_price_data():
     return df
 
 def test_bollinger_bands_basic(dummy_price_data):
-    result = bollinger_bands(dummy_price_data, period=20, std_dev=2.0)
+    result = bollinger_bands(dummy_price_data, period=20, multiplier=2.0)
     
     # 1. Ensure we did not mutate original dataframe
     assert "BB_Middle" not in dummy_price_data.columns
